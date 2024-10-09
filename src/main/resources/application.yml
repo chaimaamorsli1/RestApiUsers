@@ -8,6 +8,16 @@ spring:
     username: ${DATABASE_USERNAME:chaimaa}
     url: jdbc:postgresql://${DATABASE_URL:localhost}:${DATABASE_PORT:54320}/${DATABASE_NAME:USERS}
     driver-class-name: org.postgresql.Driver
+#    ---------------
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 2525
+    username: 7904fb2df56028
+    password: 9f3ab27cc35793
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
   profiles:
     active: local
 

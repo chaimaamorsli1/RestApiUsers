@@ -6,7 +6,7 @@ import com.example.users.Services.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "http://localhost:4200/",allowedHeaders = "*")
 @RestController
 @RequestMapping(path = "user")
 public class userController {
@@ -37,6 +37,11 @@ public class userController {
     public User login(@RequestBody LoginRequest loginRequest){
         return userService.login(loginRequest.getUsername(), loginRequest.getPassword());
     }
+    @GetMapping("/OneUser")
+    public User getOneeUser(@RequestParam Integer id){
+        return  userService.getOneUser(id);
+    }
+
 
 
 }
